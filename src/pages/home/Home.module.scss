@@ -1,0 +1,43 @@
+.homepage {
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    // place-items: center;
+    justify-content: center;
+    min-width: 320px;
+    min-height: 100vh;
+    // text-align: center;
+
+    &__title {
+      font-size: 12rem;
+      line-height: 1;
+      margin: 0;
+    }
+
+    &__subtitle {
+      font-size: 3rem;
+    }
+  }
+
+  &__images {
+    min-width: 320px;
+    max-height: 100vh;
+    height: 100%;
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      &__item {
+        padding: 0.5rem;
+        width: calc(25vw - 1rem);
+        aspect-ratio: 1/1;
+        background-image: url("https://picsum.photos/600/600");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-clip: content-box;
+        border-radius: 2rem;
+      }
+    }
+  }
+}
