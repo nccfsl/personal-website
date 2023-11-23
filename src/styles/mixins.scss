@@ -1,0 +1,29 @@
+@use "./variables" as variables;
+
+@mixin above-breakpoint($breakpoint) {
+  @media (min-width: calc( map-get(variables.$breakpoints, $breakpoint) + 1px)) {
+    @content;
+  }
+}
+
+@mixin below-breakpoint($breakpoint) {
+  @media (max-width: map-get(variables.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin breakpoint($breakpoint, $dir: "above") {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    @if ($dir == "above") {
+      @include above-breakpoint($breakpoint) {
+        @content;
+      }
+    } @else if ($dir == "below") {
+      @include below-breakpoint($breakpoint) {
+        @content;
+      }
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$breakpoint}.";
+  }
+}

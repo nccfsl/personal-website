@@ -20,17 +20,29 @@ export const Home = () => {
       gsap.from(`.${bem("__images__grid__item")}`, {
         scrollTrigger: {
           trigger: `.${bem("__images__grid")}`,
-          start: "top 80%",
-          end: "bottom bottom",
           scrub: true,
+          pin: true,
+          start: "top top",
+          end: "+=100%",
         },
         scale: 0,
         duration: 1,
         stagger: {
-          each: 1,
+          each: 0.5,
           from: "random",
           grid: "auto",
         },
+      });
+
+      gsap.from(`.${bem("__hero__logo--react")}`, {
+        scrollTrigger: {
+          trigger: `.${bem("__hero")}`,
+          scrub: true,
+          start: "top top",
+          end: "bottom top",
+        },
+        rotation: 360,
+        duration: 1,
       });
     }, compRef);
 
@@ -41,10 +53,15 @@ export const Home = () => {
     <ReactLenis ref={lenisRef} options={{ lerp: 0.12, smoothWheel: true }} root>
       <div ref={compRef} className={bem("")}>
         <section className={bem("__hero")}>
-          <h1 className={bem("__hero__title")}>NICCOLÒ FASOLO</h1>
-          <h2 className={bem("__hero__subtitle")}>
-            Frontend and iOS developer
-          </h2>
+          <div className={bem("__hero__content")}>
+            <h1 className={bem("__hero__intro")}>
+              Hey <span className={bem("__hero__intro__hand")}>👋</span>, I am
+            </h1>
+            <h2 className={bem("__hero__title")}>Niccolò</h2>
+            <h3 className={bem("__hero__subtitle")}>
+              Frontend and iOS developer
+            </h3>
+          </div>
         </section>
         <section className={bem("__images")}>
           <div className={bem("__images__grid")}>
@@ -52,14 +69,17 @@ export const Home = () => {
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
+
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
+
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
+
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>
             <div className={bem("__images__grid__item")}></div>

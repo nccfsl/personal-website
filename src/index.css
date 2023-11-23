@@ -1,11 +1,19 @@
+@font-face {
+  font-family: "Satoshi";   /*Can be any text*/
+  src: local("Satoshi-Variable"),
+    url("./assets/fonts/Satoshi-Variable.ttf") format("truetype");
+  font-stretch: 75% 125%;
+  font-style: oblique 0deg 20deg;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Satoshi, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1b1b1b;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -50,7 +58,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -61,4 +69,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

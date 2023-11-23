@@ -1,3 +1,5 @@
+@import "../../styles/mixins.scss";
+
 .homepage {
   &__hero {
     display: flex;
@@ -6,37 +8,143 @@
     justify-content: center;
     min-width: 320px;
     min-height: 100vh;
-    // text-align: center;
+    text-align: center;
+
+    // background: rgba(black, 0.3);
+    // background-image: linear-gradient(
+    //   20.6deg,
+    //   rgba(102, 51, 153, 1) 11.2%,
+    //   rgba(2, 0, 4, 1) 91.1%
+    // );
+    // background-blend-mode: darken;
+
+    // backdrop-filter: blur(50px);
+
+    &__content {
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__intro {
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+
+      &__hand {
+        display: inline-block;
+        animation: wave 2s infinite;
+        transform-origin: 70% 70%;
+
+        @keyframes wave {
+          0% {
+            transform: rotate(0deg);
+          }
+          10% {
+            transform: rotate(-10deg);
+          }
+          20% {
+            transform: rotate(12deg);
+          }
+          30% {
+            transform: rotate(-10deg);
+          }
+          40% {
+            transform: rotate(9deg);
+          }
+          50% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+      }
+    }
 
     &__title {
-      font-size: 12rem;
+      font-size: 8rem;
+      font-weight: 600;
       line-height: 1;
       margin: 0;
+
+      &__char {
+        display: inline-block;
+        transition: transform 0.2s ease-in-out;
+        transform: translateY(0);
+
+        &--first {
+          font-variation-settings: "ital" 1;
+        }
+
+        &:hover {
+          transform: translateY(-20px);
+        }
+      }
     }
 
     &__subtitle {
-      font-size: 3rem;
+      font-size: 2.5rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    &__logo {
+      height: 7em;
+      padding: 1.5em;
+      position: absolute;
+
+      &--vite {
+        bottom: 10%;
+        left: 10%;
+        filter: drop-shadow(0 0 2em #646cffaa);
+      }
+
+      &--react {
+        top: 10%;
+        right: 10%;
+        filter: drop-shadow(0 0 2em #61dafbaa);
+      }
     }
   }
 
   &__images {
     min-width: 320px;
-    max-height: 100vh;
-    height: 100%;
+    min-height: 100vh;
+    // height: 100%;
     &__grid {
       display: grid;
+      height: 100%;
       grid-template-columns: repeat(4, 1fr);
 
       &__item {
+        background-color: beige;
         padding: 0.5rem;
-        width: calc(25vw - 1rem);
-        aspect-ratio: 1/1;
+        width: calc(100% - 1rem);
+        height: calc(25vh - 1rem);
         background-image: url("https://picsum.photos/600/600");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         background-clip: content-box;
         border-radius: 2rem;
+
+        @include breakpoint(small, below) {
+          height: calc(12.5vh - 1rem);
+        }
+      }
+
+      @include breakpoint(small, below) {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   }

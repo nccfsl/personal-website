@@ -1,0 +1,88 @@
+@import "../../styles/mixins.scss";
+
+.homepage {
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 320px;
+    min-height: calc(100vh - 10rem);
+    max-height: calc(100vh - 10rem);
+    padding: 5rem;
+
+    &__content {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      // grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+        "a b c d"
+        "e f f g"
+        "h i j j";
+      gap: 2rem;
+    }
+
+    &__presentation {
+      &__title {
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: 1;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      &__item {
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+        background-color: grey;
+        aspect-ratio: 1/1;
+
+        &__a {
+          grid-area: a;
+        }
+
+        &__b {
+          grid-area: b;
+        }
+
+        &__c {
+          grid-area: c;
+        }
+
+        &__d {
+          grid-area: d;
+        }
+
+        &__e {
+          grid-area: e;
+        }
+
+        &__f {
+          grid-area: f;
+          // width: 50%;
+          aspect-ratio: unset;
+        }
+
+        &__g {
+          grid-area: g;
+        }
+
+        &__h {
+          grid-area: h;
+        }
+
+        &__i {
+          grid-area: i;
+        }
+
+        &__j {
+          grid-area: j;
+          // width: 50%;
+          aspect-ratio: unset;
+        }
+      }
+    }
+  }
+}
