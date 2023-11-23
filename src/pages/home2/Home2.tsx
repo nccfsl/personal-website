@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import styles from "./Home2.module.scss";
 import { useLayoutEffect, useRef } from "react";
+import Spline from "@splinetool/react-spline";
 
 const bem = createBem(styles, "homepage");
 gsap.registerPlugin(ScrollTrigger);
@@ -15,35 +16,25 @@ export const Home2 = () => {
   const lenis = useLenis();
 
   useLayoutEffect(() => {
-    console.log(`.${bem("__images__grid__item")}`);
+    const timeline = gsap.timeline({
+      defaults: { ease: "power3.out" },
+    });
     const ctx = gsap.context(() => {
-      gsap.from(`.${bem("__images__grid__item")}`, {
-        scrollTrigger: {
-          trigger: `.${bem("__images__grid")}`,
-          scrub: true,
-          pin: true,
-          start: "top top",
-          end: "+=100%",
-        },
-        scale: 0,
-        duration: 1,
-        stagger: {
-          each: 0.5,
-          from: "random",
-          grid: "auto",
-        },
-      });
-
-      gsap.from(`.${bem("__hero__logo--react")}`, {
-        scrollTrigger: {
-          trigger: `.${bem("__hero")}`,
-          scrub: true,
-          start: "top top",
-          end: "bottom top",
-        },
-        rotation: 360,
-        duration: 1,
-      });
+      timeline
+        .from(`.${bem("__hero__presentation__item")}`, {
+          scale: 0,
+          duration: 1,
+          stagger: {
+            each: 0.5,
+            from: "random",
+            grid: "auto",
+          },
+        })
+        .from(`.${bem("__hero__presentation__item__text")}`, {
+          opacity: 0,
+          duration: 1.5,
+        })
+        .delay(1);
     }, compRef);
 
     return () => ctx.revert();
@@ -52,74 +43,71 @@ export const Home2 = () => {
   return (
     <ReactLenis ref={lenisRef} options={{ lerp: 0.12, smoothWheel: true }} root>
       <div ref={compRef} className={bem("")}>
+        <Spline
+          className={bem("__spline")}
+          style={{ width: "100vw", height: "100vh" }}
+          scene="https://prod.spline.design/NNAbtdy-1MaN8hL3/scene.splinecode"
+        />
         <section className={bem("__hero")}>
-          <div className={bem("__hero__content")}>
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__f"
-              )}
-            >
-              <h1 className={bem("__hero__presentation__title")}>Niccolò</h1>
-              <h1 className={bem("__hero__presentation__title")}>Niccolò</h1>
+          <div id="content" className={bem("__hero__content")}>
+            <div className={bem("__hero__presentation")}>
+              <div
+                className={bem(
+                  "__hero__presentation__item",
+                  "__hero__presentation__item__a"
+                )}
+              >
+                <p
+                  className={bem(
+                    "__hero__presentation__item__text",
+                    "__hero__presentation__item__a__text"
+                  )}
+                >
+                  ABOUT
+                </p>
+              </div>
+              <div
+                className={bem(
+                  "__hero__presentation__item",
+                  "__hero__presentation__item__b"
+                )}
+              >
+                <p className={bem("__hero__presentation__item__text")}>About</p>
+              </div>
+              <div
+                className={bem(
+                  "__hero__presentation__item",
+                  "__hero__presentation__item__c"
+                )}
+              >
+                <p className={bem("__hero__presentation__item__text")}>About</p>
+              </div>
+              <div
+                className={bem(
+                  "__hero__presentation__item",
+                  "__hero__presentation__item__d"
+                )}
+              >
+                <p className={bem("__hero__presentation__item__text")}>About</p>
+              </div>
+
+              <div
+                className={bem(
+                  "__hero__presentation__item",
+                  "__hero__presentation__item__e"
+                )}
+              >
+                <p className={bem("__hero__presentation__item__text")}>About</p>
+              </div>
+              <div
+                className={bem(
+                  "__hero__presentation__item",
+                  "__hero__presentation__item__f"
+                )}
+              >
+                <p className={bem("__hero__presentation__item__text")}>About</p>
+              </div>
             </div>
-
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__a"
-              )}
-            ></div>
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__b"
-              )}
-            ></div>
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__c"
-              )}
-            ></div>
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__d"
-              )}
-            ></div>
-
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__e"
-              )}
-            ></div>
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__g"
-              )}
-            ></div>
-
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__h"
-              )}
-            ></div>
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__i"
-              )}
-            ></div>
-            <div
-              className={bem(
-                "__hero__presentation__item",
-                "__hero__presentation__item__j"
-              )}
-            ></div>
           </div>
         </section>
       </div>
