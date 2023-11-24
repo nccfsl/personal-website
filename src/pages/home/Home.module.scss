@@ -39,6 +39,10 @@
       margin-bottom: 2rem;
       font-weight: 500;
 
+      @include breakpoint(small, below) {
+        font-size: 1.75rem;
+      }
+
       &__hand {
         display: inline-block;
         animation: wave 2s infinite;
@@ -76,6 +80,10 @@
       line-height: 1;
       margin: 0;
 
+      @include breakpoint(small, below) {
+        font-size: 6rem;
+      }
+
       &__char {
         display: inline-block;
         transition: transform 0.2s ease-in-out;
@@ -96,6 +104,10 @@
       margin-top: 2rem;
       margin-bottom: 2rem;
       font-weight: 500;
+
+      @include breakpoint(small, below) {
+        font-size: 1.75rem;
+      }
     }
 
     &__logo {
