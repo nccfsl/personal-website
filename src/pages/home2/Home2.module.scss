@@ -34,9 +34,22 @@
       grid-template-rows: repeat(3, 1fr);
       grid-template-areas:
         "a b b b"
-        "a c c d"
-        "e c c f";
+        "a c c e"
+        "d c c f";
       gap: 1rem;
+
+      @include breakpoint(medium, below) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: 
+          "a b"
+          "a b"
+          "a d"
+          "c c"
+          "c c"
+          "e e"
+          "f f";
+      }
 
       &__title {
         font-size: 4rem;
@@ -52,6 +65,7 @@
         border-radius: 0.5rem;
         background-color: rgba(255, 255, 255, 0.08);
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         transition: background-color 0.2s ease-in-out;
 
         display: flex;
@@ -84,6 +98,11 @@
             text-align: center;
             font-weight: bold;
             font-size: 8vh;
+
+            @include breakpoint(medium, below) {
+              padding: 1rem;
+              font-size: 4vh;
+            }
           }
         }
 

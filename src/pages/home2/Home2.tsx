@@ -72,7 +72,9 @@ export const Home2 = () => {
                   "__hero__presentation__item__b"
                 )}
               >
-                <p className={bem("__hero__presentation__item__text")}>About</p>
+                <p className={bem("__hero__presentation__item__text")}>
+                  Experience
+                </p>
               </div>
               <div
                 className={bem(
@@ -80,7 +82,7 @@ export const Home2 = () => {
                   "__hero__presentation__item__c"
                 )}
               >
-                <p className={bem("__hero__presentation__item__text")}>About</p>
+                <p className={bem("__hero__presentation__item__text")}>Work</p>
               </div>
               <div
                 className={bem(
@@ -88,7 +90,7 @@ export const Home2 = () => {
                   "__hero__presentation__item__d"
                 )}
               >
-                <p className={bem("__hero__presentation__item__text")}>About</p>
+                <p className={bem("__hero__presentation__item__text")}>CV</p>
               </div>
 
               <div
@@ -97,7 +99,9 @@ export const Home2 = () => {
                   "__hero__presentation__item__e"
                 )}
               >
-                <p className={bem("__hero__presentation__item__text")}>About</p>
+                <p className={bem("__hero__presentation__item__text")}>
+                  GitHub
+                </p>
               </div>
               <div
                 className={bem(
@@ -105,7 +109,9 @@ export const Home2 = () => {
                   "__hero__presentation__item__f"
                 )}
               >
-                <p className={bem("__hero__presentation__item__text")}>About</p>
+                <p className={bem("__hero__presentation__item__text")}>
+                  Contact
+                </p>
               </div>
             </div>
           </div>
