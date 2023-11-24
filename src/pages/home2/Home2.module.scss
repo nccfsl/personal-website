@@ -4,6 +4,11 @@
   display: inline-block;
   background-color: #0a0a0a;
 
+  @media (prefers-color-scheme: light) {
+    background-color: rgb(222, 222, 222);
+    color: #0a0a0a;
+  }
+
   &__spline {
     width: 100vw;
     height: 100vh;
@@ -41,7 +46,7 @@
       @include breakpoint(medium, below) {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(7, 1fr);
-        grid-template-areas: 
+        grid-template-areas:
           "a b"
           "a b"
           "a d"
@@ -68,12 +73,20 @@
         -webkit-backdrop-filter: blur(20px);
         transition: background-color 0.2s ease-in-out;
 
+        @media (prefers-color-scheme: light) {
+          background-color: rgba(255, 255, 255, 0.25);
+        }
+
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
 
         &:hover {
           background-color: rgba(255, 255, 255, 0.03);
+
+          @media (prefers-color-scheme: light) {
+            background-color: rgba(255, 255, 255, 0.03);
+          }
         }
 
         &__text {

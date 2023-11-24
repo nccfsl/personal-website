@@ -34,7 +34,7 @@ export const Home2 = () => {
           opacity: 0,
           duration: 1.5,
         })
-        .delay(1);
+        .delay(1.5);
     }, compRef);
 
     return () => ctx.revert();
@@ -46,7 +46,8 @@ export const Home2 = () => {
         <Spline
           className={bem("__spline")}
           style={{ width: "100vw", height: "100vh" }}
-          scene="https://prod.spline.design/NNAbtdy-1MaN8hL3/scene.splinecode"
+          // scene="https://prod.spline.design/NNAbtdy-1MaN8hL3/scene.splinecode"
+          scene="https://prod.spline.design/rP1XC2DwAiP7dWxp/scene.splinecode"
         />
         <section className={bem("__hero")}>
           <div id="content" className={bem("__hero__content")}>
