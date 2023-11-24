@@ -7,7 +7,7 @@
     // place-items: center;
     justify-content: center;
     min-width: 320px;
-    min-height: 100vh;
+    min-height: 100svh;
     text-align: center;
 
     // background: rgba(black, 0.3);
@@ -21,7 +21,7 @@
     // backdrop-filter: blur(50px);
 
     &__content {
-      height: 100vh;
+      height: 100svh;
       width: 100vw;
       position: absolute;
       top: 0;
@@ -131,7 +131,7 @@
 
   &__images {
     min-width: 320px;
-    min-height: 100vh;
+    min-height: 100svh;
     // height: 100%;
     &__grid {
       display: grid;
@@ -142,7 +142,7 @@
         background-color: beige;
         padding: 0.5rem;
         width: calc(100% - 1rem);
-        height: calc(25vh - 1rem);
+        height: calc(25svh - 1rem);
         background-image: url("https://picsum.photos/600/600");
         background-position: center;
         background-size: cover;
@@ -151,7 +151,7 @@
         border-radius: 2rem;
 
         @include breakpoint(small, below) {
-          height: calc(12.5vh - 1rem);
+          height: calc(12.5svh - 1rem);
         }
       }
 

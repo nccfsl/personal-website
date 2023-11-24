@@ -21,6 +21,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  display: none !important;
+}
+
 ::selection {
   color: white;
   background: darkgray;
@@ -37,6 +42,7 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 h1 {
